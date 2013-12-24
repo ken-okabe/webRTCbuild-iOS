@@ -43,6 +43,9 @@ export GYP_CROSSCOMPILE=1
 gclient runhooks
 
 
+ninja -C out_sim/Debug iossim AppRTCDemo
+
+
 
 
 
