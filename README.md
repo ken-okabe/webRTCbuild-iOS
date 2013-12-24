@@ -15,21 +15,19 @@ export PATH=/a_bunch_of_stuff:/working_directory/depot_tools:$PATH
 
 Next you will need to restart your terminal or re-run your bash profile so that the changes take effect:
 
-source ~/.zsh_profile
+ ~/.zshrc
 
 3) Download the WebRTC source
-
-Back in your working directory, in the next few commands to download the massive source repository:
-
+ 
 gclient config http://webrtc.googlecode.com/svn/trunk
 
- 
-.gclient file should contain a line like:
+(edit generated .gclient)  
 target_os = ['ios', 'mac']
 
 gclient sync --force
  
-cd /path/to/webrtc/trunk
+4) set up projects 
+cd trunk
 
 export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 libjingle_objc=1"
 export GYP_GENERATORS="xcode"
