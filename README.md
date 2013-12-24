@@ -32,6 +32,9 @@ cd trunk
 export GYP_DEFINES="build_with_libjingle=1 build_with_chromium=0 libjingle_objc=1"
 
 export GYP_GENERATORS="ninja"
+
+OR
+
 export GYP_GENERATORS="xcode"
 
 export GYP_DEFINES="$GYP_DEFINES OS=ios target_arch=ia32"
