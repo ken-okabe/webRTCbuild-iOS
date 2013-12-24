@@ -35,3 +35,19 @@ export GYP_GENERATORS="xcode"
 export GYP_GENERATOR_FLAGS="$GYP_GENERATOR_FLAGS output_dir=out_sim"
 export GYP_CROSSCOMPILE=1
 gclient runhooks
+
+
+
+
+
+
+create a Xcode project from scratch that works with WebRTC libraries.
+
+1. Build WebRTC libraries following the steps from talk/app/webrtc/objc/README
+2. Add the webrtc source directory into header search path in [build settings]->[search paths]
+3. Choose libstdc++ for C++ standard library under [build settings] -> [Apple LLVM compiler language]
+4. In [build phases]->[link binary with libraries], add AudioToolbox.framework, CodeMedia.framework, CoreVideo.framework, AVFoundation.framework, libsqlites3.dylib, UIKit.framework, Foundation.framework, CoreGraphics.framework, OpenGLES.framework, and QuartzCore.framework
+5. Drag the WebRTC static libraries built by ninja (libxxxx.a) into the project as references (no need to copy them, so that when the libraries are updated, your project can link against the newest ones)
+6. Select all of the WebRTC libraries, in file inspector change their file type to Mach-O Object Code
+7. 
+(scott)
